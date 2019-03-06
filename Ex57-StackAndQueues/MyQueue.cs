@@ -8,26 +8,40 @@ namespace Ex57_StackAndQueues
 {
 	public class MyQueue<T>
 	{
-		// Insert local datastructures here ...
+		private List<T> queue = new List<T>();
 
 		public MyQueue()
 		{
 		}
 
+		
 		public void Enqueue(T item)
 		{
+			queue.Add(item);
 		}
 
 		public T Dequeue()
 		{
+			T item = queue[0];
+			queue.Remove(item);
+			return item;
 		}
 
 		public int Count()
 		{
+			return queue.Count;
 		}
 
 		public Boolean IsEmpty()
 		{
+			if(queue.Count < 1)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 	}
 }
